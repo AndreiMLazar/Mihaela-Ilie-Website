@@ -156,7 +156,7 @@ body {
 h1 {
   font-family: $headline;
   color: $darkest;
-  font-weight: 600;
+  font-weight: 300;
   font-size: 4em;
 }
 
@@ -361,7 +361,7 @@ nav a:hover [class^="fa"] {
 
 #Servicii {
   height: 800px;
-  background-color: $gri;
+  background-color: $whitest;
 }
 
 
@@ -464,6 +464,11 @@ nav a:focus {
   background-color: $white;
   width: 8vw;
   margin: 2vh auto 1vh auto;
+  height: 2px;
+  width: 100px;
+  border-radius: 15px;
+  background-color: $white;
+  box-shadow: 0 .5rem 1rem 0rem rgba(0, 0, 0, 0.1);
 }
 
 .leftslide h1 {
@@ -559,7 +564,7 @@ nav a:focus {
   box-shadow: $shadows;
   min-width: 200px;
   min-height: 60px;
-  filter: contrast(120%);
+  filter: contrast(100%);
   transition: all 0.2s ease;
   border-radius: 30px;
 }
@@ -648,6 +653,11 @@ nav a:focus {
     margin-left: 60px;
     color: $mediumBlue;
     letter-spacing: 1px;
+    text-transform: uppercase;
+    color: $mediumBlue;
+    letter-spacing: .1em;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, .1), 0 3px 5px rgba(0, 0, 0, .15), 0 5px 10px rgba(0, 0, 0, 0.1);
+    font-family: 'Fira Sans';
   }
   p {
     font-size: 1.5em;
@@ -669,6 +679,7 @@ nav a:focus {
     border-radius: 15px;
     margin-top: -12px;
     background-color: $accent;
+    box-shadow: 0 .5rem 1rem 0rem rgba(0, 0, 0, .1);
   }
 }
 
@@ -822,7 +833,7 @@ $val) {
         font-weight: 400;
         @include prefix(border-radius,
         2px 2px 0 0);
-        box-shadow: 0 1rem 2rem -0.5rem rgba(0, 0, 0, .2);
+        box-shadow: 0 1rem 2rem -0.5rem rgba(0, 0, 0, 0.1);
       }
       &:before {
         content: '';
@@ -901,9 +912,67 @@ h1 {
   text-rendering: optimizeLegibility;
 }
 
-h1.elegantshadow {
-  text-transform: uppercase;
-  color: $darkBlue;
-  letter-spacing: .1em;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, .1), 0 3px 5px rgba(0, 0, 0, .15), 0 5px 10px rgba(0, 0, 0, .2);
+#Servicii {
+  position: relative;
+  height: auto;
+  padding: 12em 16em;
+  z-index: -1;
+  border-top: 2px solid rgba(0, 0, 0, 0.12);
+  text-align: center;
+  background-image: radial-gradient(ellipse at 30% 5%, $whitest 0%, $white 100%);
+  transition: all 0.5s ease-in-out;
+  opacity: 0.99;
+  h1 {
+    font-family: 'Raleway';
+    color: $darkBlue;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, .1), 0 3px 5px rgba(0, 0, 0, .15), 0 5px 10px rgba(0, 0, 0, 0.1);
+    font-weight: 400;
+  }
+  p {
+    font-size: 1.5em;
+    text-align: left;
+    color: $darkBlue;
+    font-family: $fonts;
+    font-weight: 500;
+    letter-spacing: 0.2px;
+    line-height: 1.4em;
+  }
+  article {
+    margin-top: 40px;
+  }
+  .mui-divider {
+    margin: 0 auto;
+    height: 4px;
+    width: 70px;
+    border-radius: 15px;
+    background-color: $accent;
+    box-shadow: 0 .5rem 1rem 0rem rgba(0, 0, 0, 0.1);
+  }
+  .serv-box {
+    position: relative;
+    margin: 8vh auto;
+    height: 200px;
+    width: 280px;
+    background-color: $darkest;
+    box-shadow: 0 1rem 3rem -1rem rgba(0, 0, 0, 1);
+    transition: all 0.2s ease-in-out;
+    border-radius: 2px;
+    color: $accent;
+    h1 {
+      color: $white;
+      font-size: 2.5em;
+      padding: 20px;
+      letter-spacing: 2.5px;
+      font-weight: 300;
+    }
+  }
+  .serv-box:hover {
+    background-color: $darkBlue;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0 3rem 5rem -2rem rgba(0, 0, 0, .6);
+  }
 }
