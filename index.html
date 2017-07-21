@@ -45,6 +45,51 @@
   <link rel="manifest" href="img/favicons/manifest.json"> </head>
 
 <body>
+  <aside id="survey-menu">
+    <div id="overlay"></div>
+    <div id="survey">
+      <div id="close-button">X</div>
+      <h1>Chestionar</h1>
+      <div class="mui-divider"></div>
+      <form id="form" onsubmit="submitForm(); return false;" action="/action_page.php" method="post">
+        <fieldset>
+          <p>Nume</p>
+          <input type="text" class="required" id="nume" value="" placeholder="Nume" size="40" required autofocus>
+        </fieldset>
+        <fieldset>
+          <p>Prenume</p>
+          <input type="text" class="required" id="prenume" value="" placeholder="Prenume" size="40">
+        </fieldset>
+        <fieldset>
+          <p>Numar de Telefon</p>
+          <input type="text" title="Numai cifre." class="required" id="nrtel" value="" placeholder="Numar de Telefon" size="40">
+        </fieldset>
+        <fieldset>
+          <p>Mail</p>
+          <input type="text" class="required email" id="mail" value="" placeholder="Mail" size="40" required>
+        </fieldset>
+        <fieldset>
+          <p>Tipul Firmei</p>
+          <select name="tipfirma" class="required" id="tipfirma" value="Aaaa" style="width: 246px;height: 36px;" required>
+            <option value="Aaaa">Aaaa</option>
+            <option value="Bbbb">Bbbb</option>
+            <option value="Cccc">Cccc</option>
+            <option value="Dddd">Dddd</option>
+            <option value="Eeee">Eeee</option>
+          </select>
+        </fieldset>
+        <fieldset>
+          <p>Comentarii</p>
+          <input type="text" class="" id="comentarii" value="" placeholder="Comentarii" size="200" rows="4" style="height:150px;width:246px;">
+        </fieldset>
+        <input type="submit" id="submit"> <span><h2 id="status"></h2></span></form>
+    </div>
+  </aside>
+  <aside>
+    <div id="loading">
+      <div class="loader"></div>
+    </div>
+  </aside>
   <nav class="navbar one-page-nav">
     <nav class="wrapper">
       <a href="#Acasa" data-scroll="Acasa">
@@ -72,7 +117,7 @@
             <div class="mui-divider"></div>
             <h2>Cabinet de contabilitate</h2>
             <div class="btn-center">
-              <button class="mui-btn mui-btn--large mui-btn--raised buton"><span>Sunt interesat</span></button>
+              <button class="mui-btn mui-btn--large mui-btn--raised buton" id="survey-btn"><span>Sunt interesat</span></button>
             </div>
           </div>
         </div>
@@ -90,9 +135,9 @@
         </div>
         <div class="shadowbox2"></div>
         <div class="mui-row">
-          <div class="mui-col-md-6 ">
+          <div class="mui-col-md-5 ">
             <div class="Despretext">
-              <h1 class="elegantshadow">Despre</h1>
+              <h1>Despre</h1>
               <div class="mui-divider"></div>
               <article>
                 <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
@@ -102,7 +147,7 @@
               <div class="avatar"><img src="img/avatar.png" alt="Mihaela Ilie"></div>
             </div>
           </div>
-          <div class="mui-col-md-5 mui-col-md-offset-1">
+          <div class="mui-col-md-6 mui-col-md-offset-1">
             <div id="timeline">
               <div class="timeline-item">
                 <div class="timeline-content">
@@ -132,28 +177,50 @@
     <div class="mui-container">
       <div class="mui-row">
         <div class="mui-col-md-12">
-          <h1 class="elegantshadow2">Servicii</h1>
+          <h1>Servicii</h1>
           <div class="mui-divider"></div>
         </div>
       </div>
-      <div class="mui-row">
-        <div class="mui-col-xs-12 mui-col-md-4">
-          <div class="serv-box"><h1>Seriozitate</h1></div>
+      <div class="mui-col-xs-12 mui-col-md-4">
+        <div class="serv-box">
+          <h1>Profesionalism</h1>
+          <div class="mui-divider"></div>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, facilis quo maiores magnam modi ab libero praesentium blanditiis.</p>
         </div>
-        <div class="mui-col-xs-12 mui-col-md-4">
-          <div class="serv-box"><h1>Profesionalism</h1></div>
+      </div>
+      <div class="mui-col-xs-12 mui-col-md-4">
+        <div class="serv-box">
+          <h1>Profesionalism</h1>
+          <div class="mui-divider"></div>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, facilis quo maiores magnam modi ab libero praesentium blanditiis.</p>
         </div>
-        <div class="mui-col-xs-12 mui-col-md-4">
-          <div class="serv-box"><h1>Seriozitate</h1></div>
+      </div>
+      <div class="mui-col-xs-12 mui-col-md-4">
+        <div class="serv-box">
+          <h1>Profesionalism</h1>
+          <div class="mui-divider"></div>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, facilis quo maiores magnam modi ab libero praesentium blanditiis.</p>
         </div>
-        <div class="mui-col-xs-12 mui-col-md-4">
-          <div class="serv-box"><h1>Seriozitate</h1></div>
+      </div>
+      <div class="mui-col-xs-12 mui-col-md-4">
+        <div class="serv-box">
+          <h1>Profesionalism</h1>
+          <div class="mui-divider"></div>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, facilis quo maiores magnam modi ab libero praesentium blanditiis.</p>
         </div>
-        <div class="mui-col-xs-12 mui-col-md-4">
-          <div class="serv-box"><h1>Seriozitate</h1></div>
+      </div>
+      <div class="mui-col-xs-12 mui-col-md-4">
+        <div class="serv-box">
+          <h1>Profesionalism</h1>
+          <div class="mui-divider"></div>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, facilis quo maiores magnam modi ab libero praesentium blanditiis.</p>
         </div>
-        <div class="mui-col-xs-12 mui-col-md-4">
-          <div class="serv-box"><h1>Seriozitate</h1></div>
+      </div>
+      <div class="mui-col-xs-12 mui-col-md-4">
+        <div class="serv-box">
+          <h1>Profesionalism</h1>
+          <div class="mui-divider"></div>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, facilis quo maiores magnam modi ab libero praesentium blanditiis.</p>
         </div>
       </div>
     </div>
@@ -161,15 +228,218 @@
   <footer id="Contact" data-anchor="contact">
     <div class="mui-container">
       <div class="mui-row">
-        <div class="mui-col-md-12">
-          <h1 class="text-center elegantshadow">Contact</h1>
-          <p class="lead text-center text-red">Contact...</p>
+        <div class="mui-col-md-5 elegantshadow contactbox">
+          <h1>Contact</h1>
+          <div class="mui-divider"></div>
+          <div class="details">
+            <h2><strong>Mihaela Ilie</strong></h2>
+            <p>Telefon: <span class="highlight"><a href="tel:+40722446688">0722446688</a></span></p>
+            <p>Mail: <span class="highlight"><a href="mailto:me@MihaelaIlie?Subject=Buna%20ziua!" target="_top">me@MihaelaIlie.ro</a></span></p>
+          </div>
         </div>
-        <div class="mui-container mui--text-center"> Made by <a href="#">Andrei Lazar</a> </div>
+        <div class="mui-col-md-7">
+          <div id="map" style="overflow: visible; min-height: 240px;"> </div>
+        </div>
+      </div>
+      <div class="mui-row">
+        <div class="mui-col-md-12" id="Copyright"><span><h2 style="text-align: center;">Copyright 	&copy; 2017 Mihaela Ilie</h2></span> </div>
       </div>
     </div>
   </footer>
+  <script src="js/jquery-3.2.1.min.js"></script>
+  <script>
+    function initMap() {
+      var map = new google.maps.Map(document.getElementById('map'), {
+        center: {
+          lat: 44.417670
+          , lng: 26.013672
+        }
+        , zoom: 17
+        , zoomControl: false
+        , scaleControl: true
+        , mapTypeControl: false
+        , styles: [{
+            elementType: 'geometry'
+            , stylers: [{
+              color: '#253340'
+                        }]
+                    }
+          , {
+            elementType: 'labels.text.stroke'
+            , stylers: [{
+              color: '#253340'
+                        }]
+                    }
+          , {
+            elementType: 'labels.text.fill'
+            , stylers: [{
+              color: '#D6B371'
+                        }]
+                    }
+          , {
+            featureType: 'administrative.locality'
+            , elementType: 'labels.text.fill'
+            , stylers: [{
+              color: '#D6B371'
+                        }]
+                    }
+          , {
+            featureType: 'poi'
+            , elementType: 'labels.text.fill'
+            , stylers: [{
+              color: '#D6B371'
+                        }]
+                    }
+          , {
+            featureType: 'poi.park'
+            , elementType: 'geometry'
+            , stylers: [{
+              color: '#253340'
+                        }]
+                    }
+          , {
+            featureType: 'poi.park'
+            , elementType: 'labels.text.fill'
+            , stylers: [{
+              color: '#9aa0b0'
+                        }]
+                    }
+          , {
+            featureType: 'road'
+            , elementType: 'geometry'
+            , stylers: [{
+              color: '#081727'
+                        }]
+                    }
+          , {
+            featureType: 'road'
+            , elementType: 'geometry.stroke'
+            , stylers: [{
+              color: '#253340'
+                        }]
+                    }
+          , {
+            featureType: 'road'
+            , elementType: 'labels.text.fill'
+            , stylers: [{
+              color: '#9aa0b0'
+                        }]
+                    }
+          , {
+            featureType: 'road.highway'
+            , elementType: 'geometry'
+            , stylers: [{
+              color: '#000c1f'
+                        }]
+                    }
+          , {
+            featureType: 'road.highway'
+            , elementType: 'geometry.stroke'
+            , stylers: [{
+              color: '#253340'
+                        }]
+                    }
+          , {
+            featureType: 'road.highway'
+            , elementType: 'labels.text.fill'
+            , stylers: [{
+              color: '#d6b371'
+                        }]
+                    }
+          , {
+            featureType: 'transit'
+            , elementType: 'geometry'
+            , stylers: [{
+              color: '#2f3948'
+                        }]
+                    }
+          , {
+            featureType: 'transit.station'
+            , elementType: 'labels.text.fill'
+            , stylers: [{
+              color: '#D6B371'
+                        }]
+                    }
+          , {
+            featureType: 'water'
+            , elementType: 'geometry'
+            , stylers: [{
+              color: '#475562'
+                        }]
+                    }
+          , {
+            featureType: 'water'
+            , elementType: 'labels.text.fill'
+            , stylers: [{
+              color: '#e5e5e5'
+                        }]
+                    }
+          , {
+            featureType: 'water'
+            , elementType: 'labels.text.stroke'
+            , stylers: [{
+              color: '#17263c'
+                        }]
+                    }
+                ]
+      });
+      var myLatLng = {
+        lat: 44.417670
+        , lng: 26.013672
+      };
+      var marker = new google.maps.Marker({
+        position: myLatLng
+        , map: map
+        , title: 'Hello World!'
+      });
+    }
+  </script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBNZZl0-84Irp-zcocNo9i3tOkRixEU_cM&callback=initMap" async defer></script>
   <script src="js/index.js"></script>
+  <script type="text/javascript">
+    function _(id) {
+      return document.getElementById(id);
+    }
+
+    function submitForm() {
+      _("submit").disabled = true;
+      _("status").innerHTML = 'Se trimite...';
+      var formdata = new FormData();
+      formdata.append("nume", _("nume").value);
+      formdata.append("prenume", _("prenume").value);
+      formdata.append("nrtel", _("nrtel").value);
+      formdata.append("mail", _("mail").value);
+      formdata.append("tipfirma", _("tipfirma").value);
+      formdata.append("comentarii", _("comentarii").value);
+      var ajax = new XMLHttpRequest();
+      ajax.open("POST", "php/parser.php");
+      ajax.onreadystatechange = function () {
+        if (ajax.readyState == 4 && ajax.status == 200) {
+          if (ajax.responseText == "Succes") {
+            _("form").innerHTML = '<h3>Multumim ' + _("nume").value + ' ' + _("prenume").value + ', mesajul tau a fost trimis!</h3>';
+          }
+          else {
+            _("status").innerHTML = ajax.responseText;
+            _("submit").disabled = false;
+          }
+        }
+      }
+      ajax.send(formdata);
+    }
+  </script>
+  <script language="javascript" type="text/javascript">
+    window.onload = function () {
+      $("#loading").fadeOut(300, "linear");
+    }
+  </script>
+  <script type="text/javascript">
+    $("#close-button").click(function () {
+      $("#survey-menu").fadeOut("200,swing");
+    });
+    $("#survey-btn").click(function () {
+      $("#survey-menu").fadeIn("50,swing");
+    });
+  </script>
 </body>
 
 </html>
